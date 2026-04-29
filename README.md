@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Influo AI 官网
 
-## Getting Started
+Influo AI 官网与产品展示站点，基于 Vite、React、TypeScript 和 Tailwind CSS 构建。
 
-First, run the development server:
+## 本地开发
+
+安装依赖：
+
+```bash
+npm install
+```
+
+启动开发服务器：
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+默认本地预览地址：
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:5173/
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 构建
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+构建产物会生成在 `dist/` 目录。该目录属于生成物，不提交到 Git。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 线上部署
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+适合部署到 Vercel、Netlify、Cloudflare Pages 或静态服务器。常用配置：
 
-## Deploy on Vercel
+```text
+Framework: Vite
+Build command: npm run build
+Output directory: dist
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 项目结构
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+src/
+  components/   通用组件
+  pages/        Vite 路由页面
+  app/          旧 Next 原型页面
+public/         静态资源
+demo/           概念 Demo
+```
+
+## 常用命令
+
+```bash
+npm run dev      # 本地开发
+npm run build    # 类型检查并构建
+npm run preview  # 预览 dist 构建产物
+```

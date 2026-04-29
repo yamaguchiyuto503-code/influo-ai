@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Influo Initiative MVP Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-orange"></div>
+    <div class="ambient ambient-cyan"></div>
+
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Influo internal concept demo</p>
+        <h1>Initiative Engine MVP</h1>
+      </div>
+      <div class="topbar-actions">
+        <span class="status-pill live">Prototype</span>
+        <span class="status-pill">Front-end only</span>
+      </div>
+    </header>
+
+    <main class="shell">
+      <aside class="sidebar glass-panel">
+        <div class="sidebar-section">
+          <p class="section-label">Modes</p>
+          <div class="mode-switch" id="modeSwitch">
+            <button class="mode-button is-active" data-mode="campaign">Campaign</button>
+            <button class="mode-button" data-mode="always_on">Always-on</button>
+            <button class="mode-button" data-mode="response">Response</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="section-heading">
+            <p class="section-label">Active initiatives</p>
+            <span class="section-meta">3 items</span>
+          </div>
+          <div class="initiative-list" id="initiativeList"></div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="section-heading">
+            <p class="section-label">Memory scope</p>
+            <span class="section-meta" id="memoryStrength">High fit</span>
+          </div>
+          <div class="memory-card">
+            <div class="memory-stat">
+              <span>Brand DNA</span>
+              <strong id="brandMemoryCount">12</strong>
+            </div>
+            <div class="memory-stat">
+              <span>Performance cases</span>
+              <strong id="performanceMemoryCount">18</strong>
+            </div>
+            <div class="memory-stat">
+              <span>Response rules</span>
+              <strong id="responseMemoryCount">4</strong>
+            </div>
+          </div>
+          <ul class="memory-tags" id="memoryTags"></ul>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <div class="hero glass-panel">
+          <div class="hero-copy">
+            <p class="eyebrow" id="heroKicker">Campaign mode</p>
+            <h2 id="heroTitle">春季新品增长战役</h2>
+            <p class="hero-description" id="heroDescription"></p>
+            <div class="hero-chips" id="heroChips"></div>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span>Current status</span>
+              <strong id="heroStatus">Planned</strong>
+            </div>
+            <div class="hero-stat">
+              <span>Budget confidence</span>
+              <strong id="heroConfidence">中可信</strong>
+            </div>
+            <div class="hero-stat">
+              <span>Owner</span>
+              <strong id="heroOwner">Growth Lead</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-top">
+          <section class="panel glass-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-label">Chat to brief</p>
+                <h3>从一句话需求收敛成结构化项目</h3>
+              </div>
+              <span class="status-pill muted" id="briefCompleteness">Brief 完整度 84%</span>
+            </div>
+            <div class="chat-brief">
+              <div class="chat-column" id="chatColumn"></div>
+              <div class="brief-column" id="briefColumn"></div>
+            </div>
+          </section>
+
+          <section class="panel glass-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-label">Workflow</p>
+                <h3>状态机与人工确认点</h3>
+              </div>
+            </div>
+            <div class="timeline" id="timeline"></div>
+            <div class="approval-box">
+              <p class="section-label">Must confirm</p>
+              <ul id="approvalList"></ul>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel glass-panel">
+          <div class="panel-header tabs-header">
+            <div>
+              <p class="section-label">Workbench</p>
+              <h3>Initiative object tabs</h3>
+            </div>
+            <div class="tabs" id="tabButtons">
+              <button class="tab-button is-active" data-tab="strategy">Strategy</button>
+              <button class="tab-button" data-tab="budget">Budget</button>
+              <button class="tab-button" data-tab="assets">Assets</button>
+              <button class="tab-button" data-tab="distribution">Distribution</button>
+              <button class="tab-button" data-tab="review">Review</button>
+            </div>
+          </div>
+          <div class="tab-content" id="tabContent"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="initiativeItemTemplate">
+      <button class="initiative-item">
+        <div class="initiative-item-top">
+          <span class="initiative-type"></span>
+          <span class="initiative-status"></span>
+        </div>
+        <h4 class="initiative-title"></h4>
+        <p class="initiative-note"></p>
+      </button>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
