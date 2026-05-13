@@ -1,0 +1,7 @@
+interface:
+  display_name: "苏超执行表整理"
+  short_description: "整理苏超转播计划表并填充执行表链接"
+  default_prompt: "Use $su-chao-execution-table to turn this week's Su Chao 转播计划表 into 执行表 and fill links from 苏超平台视频源参考表."
+
+policy:
+  allow_implicit_invocation: true
